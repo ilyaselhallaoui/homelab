@@ -1,0 +1,3 @@
+*.env
+apps/n8n/*.env
+k8s/secrets/
