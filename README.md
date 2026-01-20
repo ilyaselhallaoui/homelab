@@ -1,6 +1,5 @@
 # homelab
-Personal Kubernetes homelab running on my old laptop. I run K3S on an Arch System.
-The goal of this project is to build a realistic, modular, and Git-managed
-Kubernetes environment that evolves step-by-step from a simple single-node lab
-into a more complete platform (Ingress, TLS, monitoring, GitOps, etc.).
+Personal Kubernetes homelab running on my old laptop. I run talos Linux bare metall on my old laptop :)
+
+I like to build to learn and I love owning my own piece of hardware to work on, so this is why I started this :).
 
