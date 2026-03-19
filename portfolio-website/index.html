@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ilyas hallaoui</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #faf9f7;
+      --text: #1a1a1a;
+      --text-secondary: #555;
+      --accent: #e8f5e9;
+      --accent-warm: #fff3e0;
+      --link: #1a1a1a;
+      --link-hover: #2e7d32;
+      --tag-bg: #f0efe9;
+      --tag-border: #d4d0c8;
+      --mono: 'JetBrains Mono', monospace;
+      --sans: 'IBM Plex Sans', -apple-system, sans-serif;
+      --divider: #e0ddd5;
+    }
+
+    html {
+      font-size: 17px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .site-header {
+      padding: 2.5rem 2rem 0;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .site-header h1 {
+      font-family: var(--mono);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      text-transform: lowercase;
+    }
+
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3rem 2rem 5rem;
+    }
+
+    .hero h2 {
+      font-family: var(--mono);
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 2.5rem;
+      letter-spacing: -0.03em;
+      line-height: 1.3;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      font-weight: 500;
+      background: var(--tag-bg);
+      border: 1px solid var(--tag-border);
+      border-radius: 4px;
+      padding: 0.15rem 0.55rem;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.01em;
+      text-transform: lowercase;
+    }
+
+    .section p {
+      font-size: 1rem;
+      color: var(--text);
+      line-height: 1.75;
+      margin-bottom: 0.6rem;
+    }
+
+    .highlight {
+      background: var(--accent);
+      padding: 0.1em 0.35em;
+      border-radius: 3px;
+      font-family: var(--mono);
+      font-size: 0.88em;
+    }
+
+    .highlight-warm {
+      background: var(--accent-warm);
+      padding: 0.1em 0.35em;
+      border-radius: 3px;
+      font-family: var(--mono);
+      font-size: 0.88em;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: var(--link-hover);
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--divider);
+      margin: 2.5rem 0;
+    }
+
+    .projects-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .projects-list li {
+      position: relative;
+      padding-left: 1.2rem;
+      margin-bottom: 0.45rem;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .projects-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--text-secondary);
+    }
+
+    .contact-links {
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    /* Subtle fade-in on load */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero { animation: fadeUp 0.6s ease both; }
+    .section:nth-child(2) { animation: fadeUp 0.6s ease 0.1s both; }
+    .section:nth-child(3) { animation: fadeUp 0.6s ease 0.15s both; }
+    .section:nth-child(4) { animation: fadeUp 0.6s ease 0.2s both; }
+    .section:nth-child(5) { animation: fadeUp 0.6s ease 0.25s both; }
+    .projects-section { animation: fadeUp 0.6s ease 0.3s both; }
+
+    /* Terminal cursor blink on name */
+    .cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1.1em;
+      background: var(--text);
+      margin-left: 3px;
+      vertical-align: text-bottom;
+      animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    @media (max-width: 600px) {
+      html { font-size: 16px; }
+      .site-header { padding: 2rem 1.25rem 0; }
+      main { padding: 2rem 1.25rem 4rem; }
+      .hero h2 { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <h1>ilyas hallaoui</h1>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h2>hey! i'm ilyas.<span class="cursor"></span></h2>
+    </div>
+
+    <div class="section">
+      <span class="section-label">about</span>
+      <p>Some people call me <span class="highlight">ilyasdev</span>. I'm 20, and I build systems that work — reliably, securely, and with as much automation as possible.</p>
+      <p>I don't just use AI to write code. I use AI to architect, deploy, and maintain <span class="highlight-warm">complete production systems</span>. Agentic development, infrastructure as code, and showing up every single day.</p>
+    </div>
+
+    <div class="section">
+      <span class="section-label">education</span>
+      <p>Completed my Fachabitur and currently studying <a href="#">Business Informatics</a> (Wirtschaftsinformatik) as a Fernstudium at Wilhelm Büchner Hochschule. Learning by doing has always been my thing — tinkering, breaking, fixing, shipping.</p>
+    </div>
+
+    <div class="section">
+      <span class="section-label">work</span>
+      <p>One-year internship at <a href="https://skyered-education.de">SER (Sky-E Red Education)</a>, where I redesigned their complete website, automated their entire sales pipeline with <a href="#">Make.com</a> and <a href="#">Close CRM</a>, and built workflow automations from scratch.</p>
+      <p>Now I self-school in DevOps and AI at SER — automating with <a href="#">GoHighLevel</a>, diving deep into Linux, Kubernetes, Docker, and agentic AI systems.</p>
+    </div>
+
+    <div class="section">
+      <span class="section-label">contact</span>
+      <p class="contact-links">Find me on <a href="https://x.com/ilyas_Hallaoui">X / Twitter</a> or <a href="https://github.com/ilyaselhallaoui">GitHub</a>.</p>
+    </div>
+
+    <div class="section">
+      <span class="section-label">this site</span>
+      <p>This website started as an <a href="#">Azure Resume Challenge</a> project. Then I realized I don't need a cloud provider to host a personal page — so I stripped it back, simplified it, and moved it to my <span class="highlight">K3s homelab</span> running on Talos Linux. Simple, self-hosted, mine.</p>
+    </div>
+
+    <hr class="divider">
+
+    <div class="projects-section">
+      <span class="section-label">things i work with & love</span>
+      <ul class="projects-list">
+        <li>agentic development with <a href="#">Claude Code</a></li>
+        <li>the <span class="highlight-warm">ralph wiggum technique</span> for autonomous coding</li>
+        <li>workflow automation — <a href="#">n8n</a>, <a href="#">Make.com</a>, <a href="#">GoHighLevel</a></li>
+        <li>my <span class="highlight">K3s homelab</span> on Talos Linux — self-hosting everything</li>
+        <li>infrastructure — Linux, <a href="#">Kubernetes</a>, Docker, networking</li>
+        <li>building <a href="#">ViralFrame</a> — AI-powered LinkedIn photos</li>
+        <li>CRM systems — Close, GoHighLevel</li>
+        <li>good infrastructure as a foundation for everything</li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>
