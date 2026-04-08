@@ -1,20 +1,19 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: firefly
+  name: firefly-ingress
   namespace: firefly
 spec:
-  ingressClassName: nginx
+  ingressClassName: traefik
   rules:
-  - host: firefly.local
+  - host: "firefly-ilyas.com"
     http:
       paths:
-      - backend:
+      - pathType: Prefix
+        path: "/"
+        backend:
           service:
-            name: firefly
+            name: firefly-service
             port:
               number: 80
-        path: /
-        pathType: Prefix
-status:
-  loadBalancer: {}
+

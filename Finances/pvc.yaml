@@ -4,9 +4,10 @@ metadata:
   name: firefly-pvc
   namespace: firefly
 spec:
-  storageClassName: ""
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 5Gi
+      storage: 1Gi
+  
+

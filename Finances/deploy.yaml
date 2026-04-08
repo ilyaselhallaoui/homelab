@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: Firefly
+  name: firefly
+  namespace: firefly
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: Firefly
+  template:
+    metadata:
+      labels:
+        app: Firefly
+    spec:
+      volumes:
+      - name: firefly-pv
+        persistentVolumeClaim:
+          claimName: firefly-pvc
+      containers:
+        - image: fireflyiii/core:latest
+          name: fireflyi
+          envFrom:
+            - secretRef:
+                name: firefly-secret
+          volumeMounts:
+            - name: firefly-pv
+              mountPath: /var/www/html/storage
