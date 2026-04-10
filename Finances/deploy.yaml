@@ -19,6 +19,23 @@ spec:
       - name: firefly-pv
         persistentVolumeClaim:
           claimName: firefly-pvc
+      initContainers:
+        - name: init-storage
+          image: busybox
+          command:
+            - sh
+            - -c
+            - |
+              mkdir -p /storage/database \
+                        /storage/logs \
+                        /storage/app/public \
+                        /storage/framework/cache \
+                        /storage/framework/sessions \
+                        /storage/framework/views && \
+              chown -R 33:33 /storage
+          volumeMounts:
+            - name: firefly-pv
+              mountPath: /storage
       containers:
         - image: fireflyiii/core:latest
           name: fireflyi
