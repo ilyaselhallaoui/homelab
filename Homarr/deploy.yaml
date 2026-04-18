@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: homarr
+  name: homarr
+  namespace: homarr
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: homarr
+  template:
+    metadata:
+      labels:
+        app: homarr
+    spec:
+      containers:
+      - image: ghcr.io/homarr-labs/homarr:v1.32.0
+        name: homarr
+        env:
+          - name: SECRET_ENCRYPTION_KEY
+            valueFrom:
+              secretKeyRef:
+                name: secret-homarr
+                key: db-encryption-key
+        volumeMounts:
+            - name: homarr-pv
+              mountPath: /appdata
+      volumes:
+        - name: homarr-pv
+          persistentVolumeClaim:
+            claimName: homarr-pvc
+
