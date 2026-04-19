@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: jellyfinn-ingress
+  namespace: jellyfinn
+spec:
+  ingressClassName: traefik
+  rules:
+  - host: "jellyfinn-ilyas.com"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: jellyfinn-service
+            port:
+              number: 8096
+

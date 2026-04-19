@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: jellyfinn
+  name: jellyfinn
+  namespace: jellyfinn
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jellyfinn
+  template:
+    metadata:
+      labels:
+        app: jellyfinn
+    spec:
+      containers:
+      - image: jellyfin/jellyfin
+        name: jellyfinn
+        volumeMounts:
+            - name: jellyfinn-pv
+              mountPath: /config
+      volumes:
+        - name: jellyfinn-pv
+          persistentVolumeClaim:
+            claimName: jellyfinn-pvc
+

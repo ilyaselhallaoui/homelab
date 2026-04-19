@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: jellyfinn-pv
+spec:
+  capacity:
+    storage: 2Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: ""
+  hostPath:
+    path: /var/lib/jellyfinn/appdata
+  claimRef:
+    name: jellyfinn-pvc
+    namespace: jellyfinn
