@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: PerisistentVolume
+metadata:
+  name: static-wger-pv
+spec:
+  capacity:
+    storage: 500Mi
+  volumeModes:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-path
+  hostPath:
+    path: /home/wger/static
+  claimRef:
+    name: static-wger-pvc
+    namespace: wger
+    

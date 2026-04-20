@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: deployment
+metadata:
+  labels:
+    app: wger
+  name: wger
+  namespace: wger
+spec:
+  replicas: 1
+  selector:
+    matchlabels:
+      app: wger
+  template:
+    metadata:
+      labels:
+        app: wger
+    spec:
+      containers:
+      - image: docker.io/wger/server:latest
+        name: wger
+        volumeMounts:
+          - name: static
+            mountPath: /home/wger/static
+          - name: media
+            mountPath: /home/wger/media
+      volumes:
+        - name: static-wger-pv
+          persistentVolumeClaim:
+            claimName: static-wger-pvc
+        - name: media-wger-pv
+          persistentVolumeClaim:
+            claimName: media-wger-pvc
+

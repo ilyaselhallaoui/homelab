@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: media-wger-pvc
+  namespace: wger
+spec:
+  storageClassName: local-path
+  volumeMounts: media-wger-pv
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+    storage: 1Gi

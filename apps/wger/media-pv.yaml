@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: PerisistentVolume
+metadata:
+  name: media-wger-pv
+spec:
+  capacity:
+    storage: 1Gi
+  volumeModes:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-path
+  hostPath:
+    path: /home/wger/media
+  claimRef:
+    name: media-wger-pvc
+    namespace: wger
+    
