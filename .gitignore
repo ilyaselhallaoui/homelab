@@ -3,3 +3,4 @@ apps/n8n/*.env
 k8s/secrets/
 apps/n8n/postgres-secret.yaml
 Pihole/secret.yaml
+apps/monitoring-stack/secret.yaml
