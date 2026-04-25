@@ -8,6 +8,8 @@ I heard it's a beginner-friendly-project
 1. No AI -> only rely on documentation, video guides (I didn't even use AI for this readme)
 2. Understand every
 3. Take your time, because the focus here is not the DNS system, but the learnings I can gain.
+4. Write everything by hand
+    a.) I wanna get good at writing Kubernetes Manifests, understanding every part, as I currently work       towards getting my CKAD, this is why I therefor force myself, to write every bit of yaml myself, not using Helm or GitOps for now.
 
 
 Let's build :)
