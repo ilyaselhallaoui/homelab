@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: deployment
+kind: Deployment
 metadata:
   labels:
     app: wger
@@ -8,7 +8,7 @@ metadata:
 spec:
   replicas: 1
   selector:
-    matchlabels:
+    matchLabels:
       app: wger
   template:
     metadata:
@@ -19,15 +19,15 @@ spec:
       - image: docker.io/wger/server:latest
         name: wger
         volumeMounts:
-          - name: static
-            mountPath: /home/wger/static
           - name: media
             mountPath: /home/wger/media
+          - name: static
+            mountPath: /home/wger/static
       volumes:
-        - name: static-wger-pv
-          persistentVolumeClaim:
-            claimName: static-wger-pvc
-        - name: media-wger-pv
+        - name: media
           persistentVolumeClaim:
             claimName: media-wger-pvc
+        - name: static
+          persistentVolumeClaim:
+            claimName: static-wger-pvc
 

@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx
+  name: nginx
+  namespace: wger
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - image: docker.io/nginx:stable
+        name: nginx
+        volumeMounts:
+          - name: media
+            mountPath: /home/wger/media
+          - name: static
+            mountPath: /home/wger/static
+          - name: nginx-config
+            mountPath: /etc/nginx/conf.d/default.conf
+            subPath: default.conf
+      volumes:
+        - name: media
+          persistentVolumeClaim:
+            claimName: media-wger-pvc
+        - name: static
+          persistentVolumeClaim:
+            claimName: static-wger-pvc
+        - name: nginx-config
+          configMap:
+            name: nginx-config
+

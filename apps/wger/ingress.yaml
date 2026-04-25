@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: wger-ingres
+  namespace: wger
+spec:
+  ingressClassName: traefik
+  rules:
+  - host: "wger-ilyas.com"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: nginx-svc
+            port:
+              number: 80

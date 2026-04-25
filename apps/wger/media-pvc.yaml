@@ -5,9 +5,8 @@ metadata:
   namespace: wger
 spec:
   storageClassName: local-path
-  volumeMounts: media-wger-pv
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   resources:
     requests:
-    storage: 1Gi
+      storage: 1Gi
