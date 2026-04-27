@@ -1,0 +1,24 @@
+kind: Deployment
+metadata:
+  name: pihole-deployment
+  namespace: pihole
+  labels:
+    app: pihole
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pihole
+  template:
+    metadata:
+      labels:
+        app: pihole
+    spec:
+      containers:
+      - name: pihole
+        image: pihole/pihole:latest
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: pihole-vol
+          mountPath: /etc/pihole
