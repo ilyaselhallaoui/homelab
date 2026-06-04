@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: pihole
+  name: pihole
+  namespace: basics
+spec:
+  containers:
+  - image: pihole/pihole:latest
+    name: pihole
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: uptime-kuma
+  name: uptime-kuma
+  namespace: basics
+spec:
+  containers:
+  - image: louislam/uptime-kuma:nightly2
+    name: uptime-kuma
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always

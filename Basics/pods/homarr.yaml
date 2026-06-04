@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: homarr
+  name: homarr
+spec:
+  containers:
+  - image: ghcr.io/homarr-labs/homarr:latest
+    name: homarr
+  dnsPolicy: ClusterFirst
