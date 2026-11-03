@@ -1,6 +1,6 @@
 # homelab
 
-My Kubernetes homelab: K3s with a VPS as the control plane and my old laptop as the worker. This is where I practise what I learn: DevOps, cloud and running AI.
+My Kubernetes homelab: my old laptop, rebuilt as an Ubuntu server running K3s. This is where I practise what I learn: DevOps, cloud and running AI.
 
 **Status:** paused since 2026-10-21, restarting soon.
 
@@ -8,10 +8,9 @@ My Kubernetes homelab: K3s with a VPS as the control plane and my old laptop as 
 
 | Role | Machine | Runs |
 |---|---|---|
-| Control plane | VPS | Ubuntu, K3s server |
-| Worker | old laptop | Ubuntu, K3s agent |
+| Node | old laptop | Ubuntu, K3s (single node) |
 
-The nodes are connected over Tailscale.
+Remote access runs over Tailscale.
 
 ## What's in this repo
 
