@@ -2,7 +2,7 @@
 
 My Kubernetes homelab: K3s with a VPS as the control plane and my old laptop as the worker. This is where I practise what I learn: DevOps, cloud and running AI.
 
-**Status:** paused since 2026-10-21.
+**Status:** paused since 2026-10-21, restarting soon.
 
 ## Setup
 
